@@ -28,11 +28,13 @@ def generate_rgion():
             break
         # 객체 탐지
         results = model(frame, conf=0.6)
-        #results = region(frame)
+        results_r = region(frame)
         # 탐지 표시
         annotated_frame = results[0].plot()
+        #annotated_frame_r = results_r.plot_im
         #객체 수 추출
         detected_object_count = len(results[0].boxes)
+        #detected_object_count_r = results_r.total_tracks
         status = f"COUNT : {detected_object_count}"
         color = (0,0,0)
         if detected_object_count <= 1:
@@ -56,14 +58,16 @@ def generate_rgion():
         print(f"region02 person : {region02}")
         print(f"region03 person : {region03}")
         print(f"region04 person : {region04}")
-        reframe = cv2.resize(frame,(640, 480))
+        #reframe = cv2.resize(frame,(640, 480))
         # 프레임 인코딩
         _, buffer = cv2.imencode('.jpg', annotated_frame)
         #인코딩을 바이트
-        frame_bytes = buffer.tobytes()     
+        frame_bytes = buffer.tobytes()
             
         yield(b'--frame\r\n' b'Content_Type : image/jpeg\r\n\r\n' + frame_bytes + b'\r\n' )
     cap.release()
+    #cv2.destroyWindow("Ultralytics Solutions")
+    
         
 
 @app.route('/')    
