@@ -1,4 +1,5 @@
 import cv2
+import time
 
 vod_path = "road-person.mp4"
 cap = cv2.VideoCapture(vod_path)
@@ -22,9 +23,10 @@ while True:
     success, frame = cap.read()
     if not success:
         print("Frame Check")
+        time.sleep(10)
         break
 
-    re_frame = cv2.resize(frame, (1280, 720))
+    re_frame = cv2.resize(frame, (720, 480))
     #cv2.namedWindow("Video_Get_X_Y", cv2.WINDOW_NORMAL)
     cv2.imshow("Video_Get_X_Y", re_frame)
     

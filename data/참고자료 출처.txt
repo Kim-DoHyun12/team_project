@@ -1,0 +1,8 @@
+* 데이터 수집 (CCTV)
+- 인천광역시 교통정보센터 (https://www.fitic.go.kr/main/mainPage.do)
+- 도시교통정보센터 (https://www.utic.go.kr/main/main.do)
+
+* 스마트 교차로 시스템
+렉스젠 (https://www.rexgen.co.kr/smartcross)
+파주시교통정보센터 (https://traffic.paju.go.kr/center2.view)
+송우인포텍 (http://songwooint.co.kr/theme/songwooint/html/solution/catalog/4.pdf)
